@@ -86,29 +86,36 @@
                 <DataTrigger Binding="{Binding}" Value="Home">
                     <Setter TargetName="MenuItemIcon" Property="Kind" Value="Home"/>
                 </DataTrigger>
-                <DataTrigger Binding="{Binding}" Value="Email">
+                <!--<DataTrigger Binding="{Binding}" Value="Email">
                     <Setter TargetName="MenuItemIcon" Property="Kind" Value="Email"/>
                 </DataTrigger>
                 <DataTrigger Binding="{Binding}" Value="Cloud">
                     <Setter TargetName="MenuItemIcon" Property="Kind" Value="Cloud"/>
+                </DataTrigger>-->
+                <DataTrigger Binding="{Binding}" Value="Model">
+                    <Setter TargetName="MenuItemIcon" Property="Kind" Value="Folder"/>
                 </DataTrigger>
             </DataTemplate.Triggers>
         </DataTemplate>
 
         <x:Array x:Key="NavigationMenuItems" Type="system:String">
             <system:String>Home</system:String>
-            <system:String>Email</system:String>
-            <system:String>Cloud</system:String>
+            <!--<system:String>Email</system:String>
+            <system:String>Cloud</system:String>-->
+            <system:String>Model</system:String>
         </x:Array>
 
         <DataTemplate x:Key="HomeViewTemplate">
             <views:HomeView/>
         </DataTemplate>
-        <DataTemplate x:Key="EmailViewTemplate">
+        <!--<DataTemplate x:Key="EmailViewTemplate">
             <views:EmailView/>
         </DataTemplate>
         <DataTemplate x:Key="CloudViewTemplate">
             <views:CloudView/>
+        </DataTemplate>-->
+        <DataTemplate x:Key="ModelViewTemplate">
+            <views:ModelView/>
         </DataTemplate>
     </Application.Resources>
 </Application>

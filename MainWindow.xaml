@@ -13,13 +13,17 @@
         <Style x:Key="NavigationContentStyle" TargetType="ContentControl">
             <Setter Property="ContentTemplate" Value="{StaticResource HomeViewTemplate}"/>
             <Style.Triggers>
-                <DataTrigger Binding="{Binding ElementName=NavigationMenuListBox, Path=SelectedItem}"
+                <!--<DataTrigger Binding="{Binding ElementName=NavigationMenuListBox, Path=SelectedItem}"
                              Value="Email">
                     <Setter Property="ContentTemplate" Value="{StaticResource EmailViewTemplate}"/>
                 </DataTrigger>
                 <DataTrigger Binding="{Binding ElementName=NavigationMenuListBox, Path=SelectedItem}" 
                              Value="Cloud">
                     <Setter Property="ContentTemplate" Value="{StaticResource CloudViewTemplate}"/>
+                </DataTrigger>-->
+                <DataTrigger Binding="{Binding ElementName=NavigationMenuListBox, Path=SelectedItem}"
+                             Value="Model">
+                  <Setter Property="ContentTemplate" Value="{StaticResource ModelViewTemplate}"/>
                 </DataTrigger>
             </Style.Triggers>
         </Style>
