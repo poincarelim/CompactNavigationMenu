@@ -5,24 +5,42 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
              xmlns:vm="clr-namespace:CompactNavigationMenu.ViewModels"
+             xmlns:HalconDotNet="clr-namespace:HalconDotNet;assembly=halcondotnet" 
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.DataContext>
         <vm:HomeViewModel/>
     </UserControl.DataContext>
 
-    <Grid>
-        <StackPanel Orientation="Vertical"
+    <Grid SizeChanged="Grid_SizeChanged">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <HalconDotNet:HWindowControlWPF Grid.Row="1" Grid.Column="1" x:Name="HalconWPFWindow" Margin="5" SizeChanged="HalconWPFWindow_SizeChanged" Loaded="HalconWPFWindow_Loaded"/>
+        <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtBoxResult" Margin="0" Text="TextBox" TextWrapping="Wrap"/>
+                
+        <StackPanel Grid.Row="0" Grid.Column="0" 
+                    Orientation="Vertical"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">
-            <iconPacks:PackIconMaterialDesign HorizontalAlignment="Center"
-                                              Foreground="{StaticResource PrimaryDarkBrush}"
-                                              Width="100" Height="100"
-                                              Kind="Home"/>
-            <TextBlock FontSize="40" FontWeight="Bold" 
-                       VerticalAlignment="Center" HorizontalAlignment="Center" 
-                       Foreground="{StaticResource PrimaryDarkBrush}"
-                       Text="{Binding Title}"/>
+        <!--<iconPacks:PackIconMaterialDesign HorizontalAlignment="Center"
+                                            Foreground="{StaticResource PrimaryDarkBrush}"
+                                            Width="100" Height="100"
+                                            Kind="Home"/>-->
+        
+            <TextBlock Grid.Row="0" Grid.Column="0" FontSize="30" FontWeight="Bold" 
+                    VerticalAlignment="Center" HorizontalAlignment="Center" 
+                    Foreground="{StaticResource PrimaryDarkBrush}"
+                    Text="{Binding Title}"/>
         </StackPanel>
+        <Button Grid.Row="1" Grid.Column="0" Content="Scan" Margin="5" Click="Button_Click"/>        
     </Grid>
 </UserControl>

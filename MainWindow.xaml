@@ -7,7 +7,7 @@
         xmlns:views="clr-namespace:CompactNavigationMenu.Views"
         mc:Ignorable="d"
         Height="450" Width="700" Background="#FFEAEBEC"
-        Title="Nav" WindowStartupLocation="CenterScreen">
+        Title="R3D Vision" WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
         <Style x:Key="NavigationContentStyle" TargetType="ContentControl">
