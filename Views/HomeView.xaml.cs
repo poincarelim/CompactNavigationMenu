@@ -173,8 +173,6 @@ namespace CompactNavigationMenu.Views
         public HomeView()
         {
             InitializeComponent();
-            this.Loaded += new RoutedEventHandler(HalconWPFWindow_Loaded);
-            //this.SizeChanged += HalconWPFWindow_SizeChanged;
         }
 
         private void HomeView_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -214,24 +212,10 @@ namespace CompactNavigationMenu.Views
             HDevelopExport HD = new HDevelopExport(rectHalcon, hWindow);
         }
 
-        private void HalconWPFWindow_SizeChanged(object sender, System.Windows.SizeChangedEventArgs e)
-        {
-            HalconWPFWindow.Width = e.NewSize.Width;
-            HalconWPFWindow.Height = e.NewSize.Height;
-        }
-
-        private void HalconWPFWindow_Loaded(object sender, System.Windows.RoutedEventArgs e)
-        {
-            if (double.IsNaN(this.Width)==true) return;
-
-            HalconWPFWindow.Width = this.Width;
-            HalconWPFWindow.Height = this.Height;
-            
-        }
-
         private void Grid_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            
+            HalconWPFWindow.Width = e.NewSize.Width-100-10;
+            HalconWPFWindow.Height = e.NewSize.Height-60-10;
         }
     }
 }

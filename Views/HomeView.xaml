@@ -24,7 +24,7 @@
         </Grid.ColumnDefinitions>
 
 
-        <HalconDotNet:HWindowControlWPF Grid.Row="1" Grid.Column="1" x:Name="HalconWPFWindow" Margin="5" SizeChanged="HalconWPFWindow_SizeChanged" Loaded="HalconWPFWindow_Loaded"/>
+        <HalconDotNet:HWindowControlWPF Grid.Row="1" Grid.Column="1" x:Name="HalconWPFWindow" Margin="5" />
         <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtBoxResult" Margin="0" Text="TextBox" TextWrapping="Wrap"/>
                 
         <StackPanel Grid.Row="0" Grid.Column="0" 
